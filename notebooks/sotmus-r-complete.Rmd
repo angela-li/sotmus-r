@@ -1,0 +1,170 @@
+---
+title: "Introduction to R + OSM: Completed Notebook"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This notebook provides an introduction to R, RStudio, and the osmdata packages. It's intended for R beginners, so you can skip the first section if you have a background in R.
+
+## Using R and RStudio
+
+### R Markdown
+
+This is an R Markdown document. It enables you to do "literate programming", where you can include code and written text in the same document. You can run chunks of code separately through the document. If you're familiar with Jupyter notebooks, it's basically the same idea. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+You can execute a chunk of code by putting your cursor in the chunk and pressing *Ctrl-Shift-Enter*, or by clicking the Run button (the green triangle) in the chunk. You can execute all code by clicking the Run button at the top of this document.
+
+Try running the following code to check what packages you have installed:
+
+```{r }
+pkgs <- installed.packages()
+head(pkgs)
+```
+You can also count how many packages you have installed.
+```{r }
+nrow(pkgs)
+```
+
+### Packages
+
+What is a package anyway? It's a way to extend R by grouping together useful functions (you can write your own and put it on Github/submit it to CRAN!). You should have already installed all the packages you need for this tutorial. 
+
+To update your installed packages, run the following command:
+
+```{r eval = FALSE}
+update.packages()
+```
+
+To remove packages, run the following command:
+```{r eval = FALSE}
+remove.packages("osmdata")
+```
+
+Before you use a package, you need to load it into your workspace with a library command. Here, we're loading all the packages we need for this tutorial. Go ahead and load all the packages you just downloaded. 
+
+```{r}
+library(magrittr)
+library(osmdata)
+library(sf)
+library(sp)
+```
+
+## Download OSM data
+
+The `osmdata` package works by taking R input, creating an Overpass API query, and returning the API output to R.
+
+For the Overpass query, you need:
+
+- The bounding box of your area
+- The name of the feature you're looking for (i.e. "name", "highway")
+- The desired value of that feature (i.e. "Detroit", "bikeway")
+
+The final overpass query looks something like this:
+```{r eval = FALSE}
+opq(bbox = 'detroit') %>%
+    add_osm_feature(key = 'highway', value = "cycleway") %>%
+    osmdata_sp()
+```
+
+### Get the bounding box
+
+Let's look at how we can construct a query. First, let's get the bounding box for Detroit.
+```{r}
+detroit_bb <- getbb(place_name = "detroit")
+```
+
+Pass the bounding box to the `opq()` command.
+```{r}
+opq(detroit_bb)
+opq(bbox = "detroit") # Produces the same thing
+opq(bbox = c("42.255192,-83.287959,42.450232,-82.9104391")) # Also produces the same thing
+```
+
+### Add the feature(s) we're interested in
+
+Let's say we want to find all OSM cycleways in Detroit. Take the output from the previous section and add a feature!
+
+```{r}
+opq(detroit_bb) %>% 
+  add_osm_feature(key = "highway", value = "cycleway")
+```
+
+Compare this to the output of the previous and you can see the `$features` section now has XML content. 
+
+#### Under the hood
+What `osmdata` does is paste all this information together in a query that will work with the Overpass API. You can see the query that gets submitted to the API by using the `opq_string` function. 
+
+```{r}
+opq(detroit_bb) %>% 
+  add_osm_feature(key = "highway", value = "cycleway") %>% 
+  opq_string()
+```
+
+#### How do I know the OSM names of the features I want?
+For a list of all features, run the `available_features()` command:
+```{r}
+available_features()
+```
+
+And for the values associated with that feature, run the `available_tags` function:
+```{r}
+available_tags("highway")
+```
+
+### Submit query to Overpass API
+
+Let's submit this query to the Overpass API.
+
+```{r}
+opq(detroit_bb) %>% 
+  add_osm_feature(key = "highway", value = "cycleway") %>% 
+  osmdata_sp()
+```
+
+We request this back as an `sp` object, but I actually prefer `sf` objects for analysis. If you've used PostGIS before, `sf` data is essentially in the same format. 
+```{r}
+opq(detroit_bb) %>% 
+  add_osm_feature(key = "highway", value = "cycleway") %>% 
+  osmdata_sf()
+```
+
+However, for ease of mapping, I'm going to go ahead and use the `sp` data format. I'm going to save this as a local variable so I don't have to hit the API each time.
+```{r}
+detroit_cycleways <- opq(detroit_bb) %>% 
+  add_osm_feature(key = "highway", value = "cycleway") %>% 
+  osmdata_sp()
+```
+
+### Map the output
+
+Now let's map the data!
+```{r}
+plot(detroit_cycleways$osm_lines)
+```
+
+## Try it yourself
+
+Maybe you want to add boundaries? Try a different features, or a different city? Try it out!
+Go to the [detailed lesson](https://ropensci.github.io/osmdata/articles/osmdata.html) and the [function reference](https://ropensci.github.io/osmdata/reference/index.html) for help. 
+
+Note that some data may take a while to download from Overpass.
+
+FYI, this is the syntax for adding multiple features to the same map. You can unfortunately only do this with `sf` for the time being:
+```{r eval = FALSE}
+kunming_water <- opq(bbox = 'Kunming, China') %>%
+    add_osm_feature(key = 'natural', value = 'water') %>%
+    osmdata_sf()
+
+kunming_dian_names <- opq(bbox = 'Kunming, China') %>%
+    add_osm_feature(key = 'name:en', value = 'Dian', value_exact = FALSE) %>%
+    osmdata_sf()
+
+kunming_all_features <- c(kunming_water, kunming_dian_names)
+```
+
+```{r}
+# Put your code here!
+```

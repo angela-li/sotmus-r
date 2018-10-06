@@ -1,0 +1,24 @@
+---
+title: "Introduction to R + OSM"
+subtitle: "🌎 🗺<br/>with the osmdata R package"
+author: "Angela Li <br> @CivicAngela <br> Center for Spatial Data Science, UChicago" 
+date: "2018-10-06"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: center, middle, inverse
+
+# Go to this link now, and follow the instructions there!
+
+# [bit.ly/sotmus-r](https://bit.ly/sotmus-r)
+
