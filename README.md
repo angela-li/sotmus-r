@@ -47,6 +47,11 @@ Contents
 -   [`notebooks`](): R Markdown notebooks with R code, produced during workshop. Includes empty notebook and filled-out notebook.
 -   [`slides`](): Intro slides
 
+Troubleshooting
+---------------
+
+If you're running into issues with RTools (mostly Windows users), check out this [solution on Github](https://github.com/r-lib/devtools/issues/1772#issuecomment-393669488).
+
 Additional Resources
 --------------------
 

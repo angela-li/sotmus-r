@@ -43,6 +43,9 @@ Once you've downloaded this lesson, open the `.Rproj` file to get started.
 - [`notebooks`](): R Markdown notebooks with R code, produced during workshop. Includes empty notebook and filled-out notebook. 
 - [`slides`](): Intro slides
 
+## Troubleshooting
+If you're running into issues with RTools (mostly Windows users), check out this [solution on Github](https://github.com/r-lib/devtools/issues/1772#issuecomment-393669488).
+
 ## Additional Resources
 - `osmdata` [package website](https://ropensci.github.io/osmdata/index.html), [Github](https://github.com/ropensci/osmdata)
 - `sf` [package website](https://r-spatial.github.io/sf/), [Github](https://github.com/r-spatial/sf/)
