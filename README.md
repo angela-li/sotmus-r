@@ -39,6 +39,8 @@ usethis::use_course("https://github.com/angela-li/sotmus-r/archive/master.zip")
 
 Once you've downloaded this lesson, open the `.Rproj` file to get started.
 
+Use the `sotmus-r-complete.Rmd` notebook as a guide to fill out the `sotmus-r.Rmd` lesson notebook.
+
 Contents
 --------
 
@@ -70,5 +72,7 @@ Additional Resources
 
 References
 ----------
+
+Thanks to [Mark Padgham](https://github.com/mpadge) and [rOpenSci](https://ropensci.org/) for maintaining the osmdata package!
 
 Thanks to [Jared Lander](https://swcarpentry.github.io/r-novice-gapminder/), [Chris Prener](https://github.com/slu-dss/lesson-template), [Jenny Bryan](https://github.com/jennybc/whattheyforgot), [Software Carpentry](https://swcarpentry.github.io/r-novice-gapminder/), and [RStudio Education](https://github.com/rstudio-education/datascience-box) for informing the design of this workshop repository. In the same vein, please feel free to use this workshop as a template for your own R workshop. (If you do, give me a hoot!)
