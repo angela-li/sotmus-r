@@ -90,6 +90,9 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
 }
@@ -201,6 +204,10 @@ kunming_dian_names &lt;- opq(bbox = 'Kunming, China') %&gt;%
     osmdata_sf()
 
 kunming_all_features &lt;- c(kunming_water, kunming_dian_names)</code></pre>
+<p>Also, to add multiple layers to a map with base R plotting (with sp), use the “add = T” syntax:</p>
+<pre class="r"><code># Can you make the detroit_boundaries variable on your own?
+plot(detroit_cycleways$osm_lines)
+plot(detroit_boundaries$osm_lines, add = T, col = &quot;red&quot;)</code></pre>
 <pre class="r"><code># Put your code here!</code></pre>
 </div>
 

@@ -165,6 +165,13 @@ kunming_dian_names <- opq(bbox = 'Kunming, China') %>%
 kunming_all_features <- c(kunming_water, kunming_dian_names)
 ```
 
+Also, to add multiple layers to a map with base R plotting (with sp), use the "add = T" syntax:
+```{r eval = FALSE}
+# Can you make the detroit_boundaries variable on your own?
+plot(detroit_cycleways$osm_lines)
+plot(detroit_boundaries$osm_lines, add = T, col = "red")
+```
+
 ```{r}
 # Put your code here!
 ```

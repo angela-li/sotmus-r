@@ -90,6 +90,9 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
 }
@@ -462,7 +465,7 @@ library(osmdata)</code></pre>
 <pre><code>## Object of class 'osmdata' with:
 ##                  $bbox : 42.255192,-83.287959,42.450232,-82.9104391
 ##         $overpass_call : The call submitted to the overpass API
-##             $timestamp : [ Sat 7 Oct 2018 14:45:52 ]
+##             $timestamp : [ Sat 7 Oct 2018 16:47:18 ]
 ##            $osm_points : 'sp' SpatialPointsDataFrame with 2361 points
 ##             $osm_lines : 'sp' SpatialLinesDataFrame with 134 lines
 ##          $osm_polygons : 'sp' SpatialPolygonsDataFrame with 1 polygons
@@ -475,7 +478,7 @@ library(osmdata)</code></pre>
 <pre><code>## Object of class 'osmdata' with:
 ##                  $bbox : 42.255192,-83.287959,42.450232,-82.9104391
 ##         $overpass_call : The call submitted to the overpass API
-##             $timestamp : [ Sat 7 Oct 2018 14:45:54 ]
+##             $timestamp : [ Sat 7 Oct 2018 16:47:19 ]
 ##            $osm_points : 'sf' Simple Features Collection with 2361 points
 ##             $osm_lines : 'sf' Simple Features Collection with 134 linestrings
 ##          $osm_polygons : 'sf' Simple Features Collection with 1 polygons
@@ -507,7 +510,11 @@ kunming_dian_names &lt;- opq(bbox = 'Kunming, China') %&gt;%
     osmdata_sf()
 
 kunming_all_features &lt;- c(kunming_water, kunming_dian_names)</code></pre>
-<pre class="r"><code># Put code here</code></pre>
+<p>Also, to add multiple layers to a map with base R plotting (with sp), use the “add = T” syntax:</p>
+<pre class="r"><code># Can you make the detroit_boundaries variable on your own?
+plot(detroit_cycleways$osm_lines)
+plot(detroit_boundaries$osm_lines, add = T, col = &quot;red&quot;)</code></pre>
+<pre class="r"><code># Put your code here!</code></pre>
 </div>
 
 
