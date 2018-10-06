@@ -52,6 +52,13 @@ Troubleshooting
 
 If you're running into issues with RTools (mostly Windows users), check out this [solution on Github](https://github.com/r-lib/devtools/issues/1772#issuecomment-393669488).
 
+Typing ? before your R command in the console will bring up function documentation in R.
+
+Contact Me
+----------
+
+Feel free to email me at <ali6@uchicago.edu> or reach out [on Twitter](https://twitter.com/CivicAngela) for questions! Or submit a Github Issue on this page for problems.
+
 Additional Resources
 --------------------
 
