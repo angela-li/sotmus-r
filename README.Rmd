@@ -57,6 +57,7 @@ Feel free to email me at ali6@uchicago.edu or reach out [on Twitter](https://twi
 - `osmdata` [package website](https://ropensci.github.io/osmdata/index.html), [Github](https://github.com/ropensci/osmdata)
 - `sf` [package website](https://r-spatial.github.io/sf/), [Github](https://github.com/r-spatial/sf/)
 - [overpass turbo website](http://overpass-turbo.eu): try out sample Overpass API queries
+- [Overpass API Documentation](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_API_by_Example): examples for learning more about structuring API queries to OpenStreetMap
 - [*Geocomputation in R*](https://geocompr.robinlovelace.net): free online book about analyzing, visualizing, and modeling spatial data in R
 - [*R for Data Science*](http://r4ds.had.co.nz): free online book about doing data science in R
 
