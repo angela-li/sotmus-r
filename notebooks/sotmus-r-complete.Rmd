@@ -80,7 +80,7 @@ Pass the bounding box to the `opq()` command.
 ```{r}
 opq(detroit_bb)
 opq(bbox = "detroit") # Produces the same thing
-opq(bbox = c("42.255192,-83.287959,42.450232,-82.9104391")) # Also produces the same thing
+opq(bbox = c(-83.287959,42.255192,-82.9104391,42.450232)) # Also produces the same thing
 ```
 
 ### Add the feature(s) we're interested in
