@@ -43,7 +43,7 @@ Use the `sotmus-r-complete.Rmd` notebook as a guide to fill out the `sotmus-r.Rm
 - [`code`](): Raw R code generated from notebooks
 - [`data`](): Intermediate R data objects (to be used in case of bad Internet connection)
 - [`notebooks`](): R Markdown notebooks with R code, produced during workshop. Includes empty notebook and filled-out notebook. 
-- [`slides`](): Intro slides
+- [`slides`](): Intro slides (there are only 2 because I worked live in the `sotmus-r.Rmd` notebook)
 
 ## Troubleshooting
 If you're running into issues with RTools (mostly Windows users), check out this [solution on Github](https://github.com/r-lib/devtools/issues/1772#issuecomment-393669488).
@@ -65,3 +65,5 @@ Feel free to email me at ali6@uchicago.edu or reach out [on Twitter](https://twi
 Thanks to [Mark Padgham](https://github.com/mpadge) and [rOpenSci](https://ropensci.org/) for maintaining the osmdata package!
 
 Thanks to [Jared Lander](https://swcarpentry.github.io/r-novice-gapminder/), [Chris Prener](https://github.com/slu-dss/lesson-template), [Jenny Bryan](https://github.com/jennybc/whattheyforgot), [Software Carpentry](https://swcarpentry.github.io/r-novice-gapminder/), and [RStudio Education](https://github.com/rstudio-education/datascience-box) for informing the design of this workshop repository. In the same vein, please feel free to use this workshop as a template for your own R workshop. (If you do, give me a hoot!)
+
+Note: For exporting xaringan slides to a PDF, I used the `webshot` package, instructions for which are found in the [xaringan wiki](https://github.com/yihui/xaringan/wiki/Export-Slides-to-PDF).
