@@ -1,5 +1,5 @@
 ---
-title: "Introduction to R + OSM: Completed Notebook"
+title: "Introduction to R + OSM: Lesson Notebook"
 output: html_document
 ---
 
