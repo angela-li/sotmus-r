@@ -23,10 +23,7 @@ Open RStudio and paste the following code into your console, then press Enter to
 
 ``` r
 # Download packages from CRAN
-install.packages(c("devtools", "knitr", "magrittr", "sf", "sp", "rmarkdown", "usethis"))
-
-# Download the osmdata package from Github
-devtools::install_github("ropensci/osmdata")
+install.packages(c("devtools", "knitr", "magrittr", "sf", "sp", "rmarkdown", "usethis", "osmdata"))
 ```
 
 ### Download Lesson Materials
