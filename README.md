@@ -41,10 +41,10 @@ Use the `sotmus-r-complete.Rmd` notebook as a guide to fill out the `sotmus-r.Rm
 Contents
 --------
 
--   [`code`](): Raw R code generated from notebooks
--   [`data`](): Intermediate R data objects (to be used in case of bad Internet connection)
--   [`notebooks`](): R Markdown notebooks with R code, produced during workshop. Includes empty notebook and filled-out notebook.
--   [`slides`](): Intro slides (there are only 2 because I worked live in the `sotmus-r.Rmd` notebook)
+-   [`code`](https://github.com/angela-li/sotmus-r/tree/master/code): Raw R code generated from notebooks
+-   [`data`](https://github.com/angela-li/sotmus-r/tree/master/data): Intermediate R data objects (to be used in case of bad Internet connection)
+-   [`notebooks`](https://github.com/angela-li/sotmus-r/tree/master/notebooks): R Markdown notebooks with R code, produced during workshop. Includes empty notebook (`sotmus-r.html`) and filled-out notebook (`sotmus-r-complete.html`).
+-   [`slides`](https://github.com/angela-li/sotmus-r/tree/master/slides): Intro slides (there are only 2 because I worked live in the `sotmus-r.Rmd` notebook)
 
 Troubleshooting
 ---------------
